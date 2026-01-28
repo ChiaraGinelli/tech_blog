@@ -8,6 +8,7 @@
 {% for post in posts %}
     <article>
         <h2>{{post.title}}</h2>
+        <a href="{{path('app_post_show', {'id':post.id})}}">Afficher plus...</a>
     </article>
 {% endfor %}
 {% endblock %}
