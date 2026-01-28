@@ -7,10 +7,10 @@
     <h1>{{post.title}}</h1>
     <p>{{post.content}}</p>
 </section>
-{#
+
 {{form_start(commentForm)}}
 {{form_widget(commentForm)}}
 <button class="btn">{{button_label | default ('Save')}}</button>
 {{form_end(commentForm)}}
-#}
+
 {% endblock %}

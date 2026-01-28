@@ -20,8 +20,8 @@ final class PostController extends AbstractController
         $comment = new Comment ();
         $commentForm = $this ->createForm(CommentType::class, $comment);
         dump($commentForm);
-        //$commentForm->handleRequest($request);
-/*
+        $commentForm->handleRequest($request);
+
         if ($commentForm->isSubmitted() && $commentForm->isValid()){
             $comment -> setPost($post);
             $entityManager->persist($comment);
@@ -29,11 +29,11 @@ final class PostController extends AbstractController
 
             return $this->redirectToRoute('app_post_show',["id"=>$post->getId()], Response::HTTP_SEE_OTHER);
         }
-*/
+
         return $this->render('post/show.html.twig', [
             'controller_name' => 'PostController',
             'post' => $post,
-           // 'commentForm' => $commentForm
+            'commentForm' => $commentForm
         ]);
     }
 }
